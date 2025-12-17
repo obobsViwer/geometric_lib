@@ -61,4 +61,11 @@ d078c8d (origin/main, origin/HEAD) L-03: Docs added
 ```
 
 
+## v 1.1(17.12.2025)
 
+#### В репозиторий добавлен модуль `test_square.py`, содержащий unit-тестирование функций `area()` и `perimeter()`
+### Как запустить unit-тесты
+
+```
+python.exe -m unittest tests.test_square
+```
