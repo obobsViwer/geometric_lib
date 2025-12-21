@@ -1,0 +1,33 @@
+name: Start python unit tests
+
+on: 
+    push: 
+          branches: ['**']
+          
+
+jobs:
+      unit_tests:
+                 name: Unit tests on ${{ matrix.os }}
+                 runs-on: ${{ matrix.os }}
+                 strategy: 
+                     matrix: 
+                         os: [ubuntu-latest, windows-latest]
+                 steps:
+                   - name: Checkout repo
+                     uses: actions/checkout@v4
+
+                   - name: Set-up python
+                     uses:  actions/setup-python@v5
+                     with:
+                        python-version: '3.12'
+
+                
+
+                   - name: Run tests
+                     run: python -m unittest tests.test_square
+
+                     
+                    
+                    
+                    
+                 
